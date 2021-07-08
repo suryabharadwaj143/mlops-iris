@@ -49,6 +49,6 @@ def test_predction():
         # asserting the correct response is received
         assert response.status_code == 200
          # Printing Time Stamp and Response
-        assert response.json() == {"predction": "Iris flower predcited successfully", "timestamp": datetime.datetime.now()}
+        assert response.json() == {"predction": "Iris flower predcited successfully", "timestamp": datetime.now()}
 
         
