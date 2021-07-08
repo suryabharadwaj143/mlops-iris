@@ -29,6 +29,7 @@ def test_pred_virginica():
          # Printing Time Stamp and Response
         assert response.json() == {"flower_class": "Iris Virginica", "timestamp": datetime.now()}
 
+
 #Task2 : Writing test cases 
 
 # Test to check the correct functioning of the /iris route

@@ -32,6 +32,7 @@ def load_model():
     acc1 = accuracy_score(y_test, clf1.predict(X_test))
     print(f"Model trained with accuracy1: {round(acc1, 3)}")
 
+
     # calculate the print the accuracy score KNeighborsClassifier
     acc2 = accuracy_score(y_test, clf2.predict(X_test))
     print(f"Model trained with accuracy2: {round(acc2, 3)}")

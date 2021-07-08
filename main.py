@@ -5,6 +5,7 @@ from ml_utils import load_model, predict, retrain
 from typing import List
 from datetime import datetime
 
+
 # defining the main app
 app = FastAPI(title="Iris Predictor", docs_url="/")
 
