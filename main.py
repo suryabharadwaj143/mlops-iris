@@ -37,6 +37,16 @@ class FeedbackIn(BaseModel):
 def ping():
     return {"ping": "pong"}
 
+@app.get("/iris")
+# Healthcheck route to ensure that the API is up and running
+def iris():
+    return {"iris": "This is a iris prediction page"}
+
+@app.get("/predction")
+# Healthcheck route to ensure that the API is up and running
+def predction():
+    return {"predction": "Iris flowwer predcited successfully"}
+
 
 @app.post("/predict_flower", response_model=QueryOut, status_code=200)
 # Route to do the prediction using the ML model defined.
