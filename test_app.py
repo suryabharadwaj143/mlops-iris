@@ -25,7 +25,9 @@ def test_pred_virginica():
         assert response.status_code == 200
         assert response.json() == {"flower_class": "Iris Virginica"}
 
-#Task2 Writing test cases
+
+#Task 2 Writing Test Cases
+# test to check the correct functioning of the /ping route
 def test_iris():
     with TestClient(app) as client:
         response = client.get("/iris")
@@ -39,5 +41,6 @@ def test_predction():
         # asserting the correct response is received
         assert response.status_code == 200
         assert response.json() == {"predction": "Iris flowwer predcited successfully"}
+        assert response.json() == {"iris": "This is a iris flower prediction website"}
 
-        
+
