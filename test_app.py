@@ -41,6 +41,6 @@ def test_predction():
         # asserting the correct response is received
         assert response.status_code == 200
         assert response.json() == {"predction": "Iris flowwer predcited successfully"}
-        assert response.json() == {"iris": "This is a iris flower prediction website"}
+       
 
 
