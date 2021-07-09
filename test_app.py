@@ -30,9 +30,11 @@ def test_pred_virginica():
         assert response.json() == {"flower_class": "Iris Virginica", "timestamp": datetime.now().strftime("%m/%d/%Y, %H:%M:%S")}
 
 
+
 #Task2 : Writing test cases 
 
 # Test to check the correct functioning of the /iris route
+
 def test_iris():
     with TestClient(app) as client:
         response = client.get("/iris")
@@ -48,7 +50,11 @@ def test_predction():
         response = client.get("/predction")
         # asserting the correct response is received
         assert response.status_code == 200
+
          # Printing Time Stamp and Response
         assert response.json() == {"predction": "Iris flower predcited successfully", "timestamp": datetime.now().strftime("%m/%d/%Y, %H:%M:%S")}
 
-        
+       
+
+
+
