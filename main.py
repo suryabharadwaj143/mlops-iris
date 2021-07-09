@@ -24,6 +24,7 @@ class QueryIn(BaseModel):
 # class which is returned in the response
 class QueryOut(BaseModel):
     flower_class: str
+    timestamp : str
 
 # class which is expected in the payload while re-training
 class FeedbackIn(BaseModel):
@@ -38,19 +39,19 @@ class FeedbackIn(BaseModel):
 # Healthcheck route to ensure that the API is up and running
 def ping():
      # Printing Time Stamp and Response
-    return {"ping": "pong", "timestamp": datetime.now()}
+    return {"ping": "pong", "timestamp":datetime.now().strftime("%m/%d/%Y, %H:%M:%S")}
 
 @app.get("/iris")
 # Healthcheck route to ensure that the API is up and running
 def iris():
      # Printing Time Stamp and Response
-    return {"iris": "This is a Iris Flower prediction page", "timestamp": datetime.now()}
+    return {"iris": "This is a Iris Flower prediction page", "timestamp": datetime.now().strftime("%m/%d/%Y, %H:%M:%S")}
 
 @app.get("/predction")
 # Healthcheck route to ensure that the API is up and running
 def predction():
      # Printing Time Stamp and Response
-    return {"predction": "Iris Flower predcited successfully", "timestamp": datetime.now()}
+    return {"predction": "Iris flower predcited successfully", "timestamp": datetime.now().strftime("%m/%d/%Y, %H:%M:%S")}
 
 
 @app.post("/predict_flower", response_model=QueryOut, status_code=200)
@@ -59,7 +60,7 @@ def predction():
 # Response: QueryOut containing the flower_class predicted (200)
 def predict_flower(query_data: QueryIn):
     #output = {"flower_class": predict(query_data), "timestamp": datetime.now()}
-    return {"flower_class": predict(query_data), "timestamp": datetime.now()}
+    return {"flower_class": predict(query_data), "timestamp": datetime.now().strftime("%m/%d/%Y, %H:%M:%S")}
 
 @app.post("/feedback_loop", status_code=200)
 # Route to further train the model based on user input in form of feedback loop

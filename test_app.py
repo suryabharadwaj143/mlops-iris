@@ -10,7 +10,7 @@ def test_ping():
         # asserting the correct response is received
         assert response.status_code == 200
         # Printing Time Stamp and Response
-        assert response.json() == {"ping": "pong" , "timestamp": datetime.now()}
+        assert response.json() == {"ping": "pong" , "timestamp": datetime.now().strftime("%m/%d/%Y, %H:%M:%S")}
 
 
 # test to check if Iris Virginica is classified correctly
@@ -27,7 +27,7 @@ def test_pred_virginica():
         # asserting the correct response is received
         assert response.status_code == 200
          # Printing Time Stamp and Response
-        assert response.json() == {"flower_class": "Iris Virginica", "timestamp": datetime.now()}
+        assert response.json() == {"flower_class": "Iris Virginica", "timestamp": datetime.now().strftime("%m/%d/%Y, %H:%M:%S")}
 
 
 #Task2 : Writing test cases 
@@ -39,7 +39,7 @@ def test_iris():
         # asserting the correct response is received
         assert response.status_code == 200
          # Printing Time Stamp and Response
-        assert response.json() == {"iris": "This is a Iris Flower prediction page", "timestamp": datetime.now()}
+        assert response.json() == {"iris": "This is a Iris Flower prediction page", "timestamp": datetime.now().strftime("%m/%d/%Y, %H:%M:%S")}
 
 
 # Test to check the correct functioning of the /predction route
@@ -49,6 +49,6 @@ def test_predction():
         # asserting the correct response is received
         assert response.status_code == 200
          # Printing Time Stamp and Response
-        assert response.json() == {"predction": "Iris flower predcited successfully", "timestamp": datetime.now()}
+        assert response.json() == {"predction": "Iris flower predcited successfully", "timestamp": datetime.now().strftime("%m/%d/%Y, %H:%M:%S")}
 
         
